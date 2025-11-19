@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TASK5</string>
+    <string name="name">Name</string>
+    <string name="nh_p_t_n">Nhập tên</string>
+</resources>
