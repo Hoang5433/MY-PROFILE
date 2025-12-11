@@ -18,6 +18,7 @@
         android:scaleType="centerCrop"
         app:riv_corner_radius="100dp"
         app:riv_oval="false"
+        android:transitionName="avatar_transition"
         />
 
     <Button

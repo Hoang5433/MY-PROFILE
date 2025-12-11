@@ -33,6 +33,7 @@ dependencies {
     implementation("com.google.android.material:material:1.13.0")
     implementation("androidx.activity:activity:1.9.3")
     implementation("androidx.constraintlayout:constraintlayout:2.2.1")
+    implementation("com.daimajia.androidanimations:library:2.4@aar")
     implementation("com.github.dhaval2404:imagepicker:2.1")
     implementation("com.github.bumptech.glide:glide:4.16.0")
     implementation("com.makeramen:roundedimageview:2.3.0")
