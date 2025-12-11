@@ -1,64 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="#F2F5F8"
+    android:fillViewport="true"
     tools:context=".MainActivity">
 
-    <com.makeramen.roundedimageview.RoundedImageView
-        android:id="@+id/imgAvatar"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="10dp"
-        android:src="@mipmap/ic_launcher"
-        android:scaleType="centerCrop"
-        app:riv_corner_radius="100dp"
-        app:riv_oval="false"
-        android:transitionName="avatar_transition"
-        />
-
-    <Button
-        android:id="@+id/btnChooseImage"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Chọn ảnh"
-        android:layout_marginBottom="20dp" />
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp">
 
-    <EditText
-        android:id="@+id/txtName"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:textSize="25dp"
-        android:inputType="text"
-        android:contentDescription="Nhập tên"
-        android:gravity="left"
-        android:ems="10"
-        android:text="Tên: "
-        android:layout_marginHorizontal="20dp" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="@android:color/white">
 
-    <EditText
-        android:id="@+id/txtEmail"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:textSize="25dp"
-        android:inputType="textWebEmailAddress"
-        android:contentDescription="Nhập email"
-        android:gravity="left"
-        android:ems="10"
-        android:text="Email: "
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="5dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="30dp"
+                android:gravity="center_horizontal">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:text="Lưu thông tin"
-        android:id="@+id/btnView"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="5dp" />
-</LinearLayout>
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/imgAvatar"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:src="@mipmap/ic_launcher"
+                        android:scaleType="centerCrop"
+                        app:riv_corner_radius="60dp"
+                        app:riv_border_width="2dp"
+                        app:riv_border_color="#E0E0E0"
+                        app:riv_oval="true"
+                        android:transitionName="avatar_transition" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="bottom|end"
+                        android:background="@drawable/bg_circle_button"
+                        android:src="@android:drawable/ic_menu_camera"
+                        android:padding="6dp"
+                        android:elevation="4dp"
+                        app:tint="#FFFFFF"/>
+                </FrameLayout>
+
+                <Button
+                    android:id="@+id/btnChooseImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thay đổi ảnh"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:textColor="#3F51B5"
+                    android:layout_marginBottom="10dp"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Họ và tên"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    android:layout_marginBottom="16dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                        android:maxLines="1"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Địa chỉ Email"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    android:layout_marginBottom="24dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/btnView"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="Lưu Thông Tin"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:backgroundTint="#3F51B5"
+                    app:cornerRadius="12dp"
+                    android:elevation="4dp"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</ScrollView>
